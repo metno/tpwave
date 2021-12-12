@@ -1,5 +1,13 @@
 #!/usr/bin/env Rscript
 
+#
+#------------------------------------------------------------------------------
+# ~-~ tpwave.r -~-
+# Multiresolution analysis of prec based on discrete wavelet transformation
+# 
+# Author: CL (cristianl@met.no)
+#------------------------------------------------------------------------------
+
 library(ncdf4)
 library(waveslim)
 library(raster)
@@ -29,11 +37,17 @@ argv <- parse_args(p)
 #------------------------------------------------------------------------------
 # Define extent based on the command line argurment
 if ( !is.na( argv$extent_lab)) {
+  # Europe
   if ( argv$extent_lab == "EU") argv$extent <- c( -40,  +75,  10,  85)
+  # Africa
   if ( argv$extent_lab == "AF") argv$extent <- c( -40,  +75, -55,  45)
+  # Asia
   if ( argv$extent_lab == "AS") argv$extent <- c( +25, +179,  -5,  85)
+  # Oceania
   if ( argv$extent_lab == "OC") argv$extent <- c( +40, +179, -70,  10)
+  # North America
   if ( argv$extent_lab == "NA") argv$extent <- c(-179,  -10,  10,  85)
+  # South America
   if ( argv$extent_lab == "SA") argv$extent <- c(-179,  -10, -70,  20)
   # nothern hemisphere
   if ( argv$extent_lab == "NH") argv$extent <- c(-179, +179,   0,  85)
@@ -52,7 +66,7 @@ if ( !is.na( argv$extent_lab)) {
 # Constants
 
 date_format <- "%Y-%m-%d"
-proj4.wgs84     <- "+proj=longlat +datum=WGS84"
+proj4.wgs84 <- "+proj=longlat +datum=WGS84"
 
 #
 #------------------------------------------------------------------------------
