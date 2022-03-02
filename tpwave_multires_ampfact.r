@@ -164,7 +164,6 @@ mres_reldev_q99 <- vector()
 mres_reldev_future_q50 <- vector()
 mres_reldev_future_q50_a <- vector()
 mres_reldev_future_q99 <- vector()
-
 # loop over the mother wavelet components
 for (i in 1:j_mw) {
   # compute percentiles of energy over period 1 considering the 30-years of daily energies  
@@ -204,14 +203,9 @@ for (i in 1:j_mw) {
   
   # print output (just a selection, it can be easily adapted)
   print( paste( formatC( round( a_l[i],2), width=5,flag="0"), # spatial scale 
-                formatC( round( bxp1_p[[i]]$stats[3,1],2), width=5,flag="0"), # median of the energy over period 1 (as % of total) 
-                formatC( round( bxp2_p[[i]]$stats[3,1],2), width=5,flag="0"), # median of the energy over period 2 (as % of total)  
-                formatC( round( mres_reldev_q50[i],2), width=5,flag="0"), # relative deviation between the medians period2 wrt period1
-                formatC( round( bxp1[[i]]$q99,2), width=5,flag="0"), # 99-th percentile over period 1
-                formatC( round( bxp2[[i]]$q99,2), width=5,flag="0"), # 99-th percentile over period 1
-                formatC( round( mres_reldev_q99[i],2), width=5,flag="0"), # relative deviation between the 99-th percentiles period2 wrt period1 
-                formatC( round( mres_reldev_p_q50[i],2), width=5,flag="0"), # relative deviation between the medians period2 wrt period1
-                formatC( round( lm[2]*365*10,2), width=6,flag="0"), # slope of the best fitting line (trend over decades)
+                formatC( round( bxp1[[i]]$stats[3,1],3), width=6,flag="0"), # relative deviation between the medians period2 wrt period1
+                formatC( round( bxp2[[i]]$stats[3,1],3), width=6,flag="0"), # relative deviation between the medians period2 wrt period1
+                formatC( round( mres_reldev_q50_a[i],3), width=6,flag="0"), # relative deviation between the medians period2 wrt period1
                 formatC( round( mres_reldev_future_q50[i],3), width=6,flag="0"), # relative deviation between the medians period3 wrt period1
                 formatC( round( mres_reldev_future_q50_a[i],3), width=6,flag="0"))) # relative deviation between the medians period3 wrt period2
 } # end loop over the mother wavelet components
