@@ -27,7 +27,13 @@ Production of several figures based on the RData files stored in ```./data/```
 ./plot_tpwave.r --filter_len 30
 ```
 
+The program used to post-process the output files, such as ```ERA5_tp_day_example_waveEn.RData``` or similar, is included as:
 
+```
+./tpwave_multires_ampfact.r
+```
+
+and it can also be used to perform the linear regression of the scale-dependent wavelet energies, to compute the inflation or deflation coefficients used to re-scale single weather events over climates that are different with respect to the one they have actually occurred.
 
 
 ## Copyright and license
