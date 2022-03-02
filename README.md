@@ -4,11 +4,10 @@ tpwave is a repository for an R program used for the Multiresolution analysis of
 ## Required depdendencies
 
 The following R libraries are required:
-- waveslim
-- ncdf4
-- waveslim
-- argparser
-- raster
+- waveslim (tested with version 1.8.2)
+- ncdf4 (tested with version 1.17)
+- argparser (tested with version 0.4)
+- raster (tested with version 2.9-5)
 
 ## Examples
 
