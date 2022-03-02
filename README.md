@@ -9,7 +9,7 @@ The following R libraries are required:
 - argparser (tested with version 0.4)
 - raster (tested with version 2.9-5)
 
-## Examples
+## Directory content
 
 Multiresolution analysis of ERA5 daily precipitation based on 2D Haar wavelets:
 
@@ -33,6 +33,15 @@ The program used to post-process the output files, such as ```ERA5_tp_day_exampl
 ```
 
 and it can also be used to perform the linear regression of the scale-dependent wavelet energies, to compute the inflation or deflation coefficients used to re-scale single weather events over climates that are different with respect to the one they have actually occurred.
+
+The program used to plot Figure 8 of Benestad et al. (2022) (the scientific article is currently under review). The figure shows the precipitation field of Hurricane Katrina on the 28th of August 2005 under different climatological conditions.
+
+```
+./plot_fig8_Benestad_et_al_2022.r
+```
+
+it generates three figures: "katrina_orig_2005.png" (original precipitation field, panel b) in Fig.8); "katrina_deflated_1961_1990.png" (precipitation field consistent with 1961-1990 climate, panel a) in Fig.8); "katrina_eninflated_2021_2050.png" (precipitation field consistent with an hypothetical 2021-2050 climate, panel c) in Fig.8).
+
 
 
 ## Copyright and license
